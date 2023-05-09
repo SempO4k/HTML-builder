@@ -8,7 +8,7 @@ async function printFileInfo() {
     });
     for (const file of files) {
       if (file.isFile()) {
-        const stats = await stat(path.join(__dirname, "secret-folder"));
+        const stats = await stat(path.join(__dirname, "secret-folder", file.name));
         const fileExt = path.extname(file.name);
         const fileName = path.basename(file.name, fileExt);
         const fileSize = stats.size / 1024;
